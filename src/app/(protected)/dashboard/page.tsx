@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 type Props = {};
 
 const Page = async (props: Props) => {
-  console.log("Running onboard page...");
+  // console.log("Running onboard page...");
   const user = await onBoardUser();
   // console.log("User from onboard:", user?.data);
 
