@@ -37,7 +37,6 @@ const Page = (props: Props) => {
             ))}
           </div>
           <CreateAutomation />
-         
         </div>
       </div>
     </div>

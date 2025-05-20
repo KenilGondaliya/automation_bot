@@ -1,6 +1,5 @@
 "use client";
 import { usePaths } from "@/hooks/user-nav";
-import { LogoSmall } from "@/svgs/logo-small";
 import React from "react";
 import Items from "./items";
 import { SidebarSeparator } from "@/components/ui/sidebar";
@@ -8,6 +7,8 @@ import ClerkAuthState from "../clerk-auth-state";
 import { BadgeHelp } from "lucide-react";
 import { SubscriptionPlan } from "../subscription-plan";
 import UpgradeCard from "./upgrade";
+import robotics from "@/assets/Lottie/robotics.json";
+import Lottie from "lottie-react";
 
 type Props = {
   slug: string;
@@ -35,7 +36,13 @@ const Sidebar = ({ slug }: Props) => {
       backdrop-blur-3xl"
       >
         <div className="flex gap-x-2 items-center justify-center">
-          <LogoSmall />
+          {/* <LogoSmall /> */}
+          <Lottie
+            animationData={robotics}
+            loop={true}
+            className="w-36"
+          />
+
         </div>
         <div className="flex flex-col py-3">
           <Items page={page} slug={slug} />

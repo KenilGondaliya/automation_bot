@@ -1,6 +1,6 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, CheckCircle } from "lucide-react"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, CheckCircle } from "lucide-react";
 
 export default function Home() {
   return (
@@ -12,16 +12,28 @@ export default function Home() {
               YourBrand
             </Link>
             <nav className="hidden gap-6 md:flex">
-              <Link href="#features" className="text-sm font-medium transition-colors hover:text-primary">
+              <Link
+                href="#features"
+                className="text-sm font-medium transition-colors hover:text-primary"
+              >
                 Features
               </Link>
-              <Link href="#about" className="text-sm font-medium transition-colors hover:text-primary">
+              <Link
+                href="#about"
+                className="text-sm font-medium transition-colors hover:text-primary"
+              >
                 About
               </Link>
-              <Link href="#testimonials" className="text-sm font-medium transition-colors hover:text-primary">
+              <Link
+                href="#testimonials"
+                className="text-sm font-medium transition-colors hover:text-primary"
+              >
                 Testimonials
               </Link>
-              <Link href="#contact" className="text-sm font-medium transition-colors hover:text-primary">
+              <Link
+                href="#contact"
+                className="text-sm font-medium transition-colors hover:text-primary"
+              >
                 Contact
               </Link>
             </nav>
@@ -44,8 +56,8 @@ export default function Home() {
                     Your Main Headline Here
                   </h1>
                   <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    Your compelling subheadline that explains your value proposition and encourages visitors to take
-                    action.
+                    Your compelling subheadline that explains your value
+                    proposition and encourages visitors to take action.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -71,11 +83,16 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="features" className="w-full bg-muted py-12 md:py-24 lg:py-32">
+        <section
+          id="features"
+          className="w-full bg-muted py-12 md:py-24 lg:py-32"
+        >
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Features & Benefits</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                  Features & Benefits
+                </h2>
                 <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Discover how our solution can help you achieve your goals.
                 </p>
@@ -88,7 +105,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold">Feature One</h3>
                 <p className="text-center text-gray-500">
-                  Description of your first key feature and how it benefits your users.
+                  Description of your first key feature and how it benefits your
+                  users.
                 </p>
               </div>
               <div className="flex flex-col items-center space-y-2 rounded-lg border p-6">
@@ -97,7 +115,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold">Feature Two</h3>
                 <p className="text-center text-gray-500">
-                  Description of your second key feature and how it benefits your users.
+                  Description of your second key feature and how it benefits
+                  your users.
                 </p>
               </div>
               <div className="flex flex-col items-center space-y-2 rounded-lg border p-6">
@@ -106,7 +125,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold">Feature Three</h3>
                 <p className="text-center text-gray-500">
-                  Description of your third key feature and how it benefits your users.
+                  Description of your third key feature and how it benefits your
+                  users.
                 </p>
               </div>
             </div>
@@ -128,9 +148,12 @@ export default function Home() {
               </div>
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">About Us</h2>
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                    About Us
+                  </h2>
                   <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    Your company story, mission, and values. Explain who you are and why customers should trust you.
+                    Your company story, mission, and values. Explain who you are
+                    and why customers should trust you.
                   </p>
                 </div>
                 <ul className="grid gap-2">
@@ -154,13 +177,19 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="testimonials" className="w-full bg-muted py-12 md:py-24 lg:py-32">
+        <section
+          id="testimonials"
+          className="w-full bg-muted py-12 md:py-24 lg:py-32"
+        >
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">What Our Customers Say</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                  What Our Customers Say
+                </h2>
                 <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Don't just take our word for it. Here's what our customers have to say.
+                  Don't just take our word for it. Here's what our customers
+                  have to say.
                 </p>
               </div>
             </div>
@@ -168,8 +197,8 @@ export default function Home() {
               <div className="flex flex-col justify-between rounded-lg border p-6">
                 <div className="space-y-2">
                   <p className="text-gray-500">
-                    "Testimonial from a satisfied customer explaining how your product or service helped them solve a
-                    problem."
+                    "Testimonial from a satisfied customer explaining how your
+                    product or service helped them solve a problem."
                   </p>
                 </div>
                 <div className="flex items-center gap-4 pt-4">
@@ -183,7 +212,8 @@ export default function Home() {
               <div className="flex flex-col justify-between rounded-lg border p-6">
                 <div className="space-y-2">
                   <p className="text-gray-500">
-                    "Another testimonial highlighting a different aspect of your product or service and its benefits."
+                    "Another testimonial highlighting a different aspect of your
+                    product or service and its benefits."
                   </p>
                 </div>
                 <div className="flex items-center gap-4 pt-4">
@@ -197,7 +227,8 @@ export default function Home() {
               <div className="flex flex-col justify-between rounded-lg border p-6">
                 <div className="space-y-2">
                   <p className="text-gray-500">
-                    "A third testimonial that addresses potential concerns and shows how your solution overcame them."
+                    "A third testimonial that addresses potential concerns and
+                    shows how your solution overcame them."
                   </p>
                 </div>
                 <div className="flex items-center gap-4 pt-4">
@@ -215,9 +246,12 @@ export default function Home() {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Ready to Get Started?</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                  Ready to Get Started?
+                </h2>
                 <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Join thousands of satisfied customers who have already taken the next step.
+                  Join thousands of satisfied customers who have already taken
+                  the next step.
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -231,13 +265,18 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="contact" className="w-full bg-muted py-12 md:py-24 lg:py-32">
+        <section
+          id="contact"
+          className="w-full bg-muted py-12 md:py-24 lg:py-32"
+        >
           <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Contact Us</h2>
+              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+                Contact Us
+              </h2>
               <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Have questions or need assistance? Our team is here to help. Reach out to us using the form or contact
-                information below.
+                Have questions or need assistance? Our team is here to help.
+                Reach out to us using the form or contact information below.
               </p>
             </div>
             <div className="flex flex-col gap-4 rounded-lg border bg-background p-6">
@@ -305,5 +344,5 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  )
+  );
 }

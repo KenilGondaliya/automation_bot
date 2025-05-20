@@ -1,28 +1,46 @@
 import { ChevronRight, PencilIcon } from "lucide-react";
 import React from "react";
 import ActivateAutomationButton from "../../activate-automation-button";
+import { useQueryAutomation } from "@/hooks/user-queries";
+import { useEditAutomation } from "@/hooks/use-automations";
+import { useMutationdataState } from "@/hooks/use-mutation-data";
+import { Input } from "@/components/ui/input";
 
 type Props = {
-    id: string
+  id: string;
 };
 
-const AutomationsBreadCrumb = ({id}: Props) => {
-//    User mutation stuff to update the automations
-  //WIP: get the aitomation data
+const AutomationsBreadCrumb = ({ id }: Props) => {
+  const { data } = useQueryAutomation(id);
+  const { edit, enableEdit, inputRef, isPending } = useEditAutomation(id);
+
+  const { latestVariable } = useMutationdataState(["update-automation"]);
+
   return (
     <div className="rounded-full w-full p-5 bg-[#18181B1A] flex justify-between items-center">
       <div className="flex items-center gap-x-3">
         <p className="text-[#9B9CA0]">Automations</p>
         <ChevronRight color="#9B9CA0" />
         <span className="flex gap-x-3 items-center">
-          {/* Show the editing data */}
-          <p className="text-[#9B9CA0]">This is the automation title</p>
-          <span
-            // onClick={enableEdit}
-            className="cursor-pointer hover:opacity-75 duration-100 transition flex-shrink-0 mr-4"
-          >
-            <PencilIcon size={14} />
-          </span>
+          {edit ? (
+            <Input
+              ref={inputRef}
+              placeholder={
+                isPending ? latestVariable.variables : "Add a new name"
+              }
+              className="bg-transparent h-auto online-none text-base border-none p-0"
+            />
+          ) : (
+            <p className="text-[#9B9CA0]">{data?.data?.name}</p>
+          )}
+
+          {edit ? (
+            <></>
+          ) : (
+            <span className="cursor-pointer hover:opacity-75 duration-100 transition flex-shrink-0 mr-4">
+              <PencilIcon size={14} />
+            </span>
+          )}
         </span>
       </div>
       <div className="flex gap-x-5">
@@ -38,7 +56,7 @@ const AutomationsBreadCrumb = ({id}: Props) => {
           </p>
         </div>
       </div>
-      <ActivateAutomationButton  />
+      <ActivateAutomationButton />
     </div>
   );
 };
