@@ -1,7 +1,6 @@
 "use client";
 import AutomationList from "@/components/global/automation-list";
 import CreateAutomation from "@/components/global/create-automation";
-import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import React from "react";
 
@@ -38,9 +37,7 @@ const Page = (props: Props) => {
             ))}
           </div>
           <CreateAutomation />
-          <Button className="bg-background-80 hover:bg-background-80 text-white">
-            Standard
-          </Button>
+         
         </div>
       </div>
     </div>

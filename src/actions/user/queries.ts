@@ -35,7 +35,7 @@ export const createUser = async (
       lastName,
       email,
       subscription: {
-        create: {},
+      create: {},
       },
     },
     select: {
