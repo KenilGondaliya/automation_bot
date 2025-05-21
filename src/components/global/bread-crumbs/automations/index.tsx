@@ -1,3 +1,4 @@
+"use client";
 import { ChevronRight, PencilIcon } from "lucide-react";
 import React from "react";
 import ActivateAutomationButton from "../../activate-automation-button";
@@ -13,6 +14,8 @@ type Props = {
 const AutomationsBreadCrumb = ({ id }: Props) => {
   const { data } = useQueryAutomation(id);
   const { edit, enableEdit, inputRef, isPending } = useEditAutomation(id);
+
+  // console.log(data);
 
   const { latestVariable } = useMutationdataState(["update-automation"]);
 

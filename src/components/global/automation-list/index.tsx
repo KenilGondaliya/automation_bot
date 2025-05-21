@@ -33,11 +33,16 @@ const AutomationList = (props: Props) => {
 
   const optimisticUiData = useMemo(() => {
     if (latestVariable?.variables) {
-      const test = [latestVariable.variables, ...data.data];
-      return { test: data };
+      return {
+        ...data,
+        data: [latestVariable.variables, ...data.data],
+      };
     }
     return data;
   }, [latestVariable, data]);
+
+  // console.log(optimisticUiData);
+  
 
   return (
     <div className="flex flex-col gap-y-3">
