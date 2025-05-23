@@ -4,7 +4,11 @@ import React from "react";
 import Trigger from "@/components/global/automations/trigger";
 import { getAutomations } from "@/actions/automations/queries";
 import { getAutomationInfo } from "@/actions/automations";
-import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query";
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+} from "@tanstack/react-query";
 import { PrefetchUserAutomation } from "@/react-query/prefetch";
 
 type Props = {
@@ -14,7 +18,7 @@ type Props = {
 export async function generateMetadata({ params }: { params: { id: string } }) {
   const info = await getAutomationInfo(params.id);
   // console.log(info);
-  
+
   return {
     title: info.data?.name,
   };
@@ -22,8 +26,8 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 
 const Page = async ({ params }: Props) => {
   const query = new QueryClient();
-  console.log(query);
-  
+  // console.log(query);
+
   await PrefetchUserAutomation(query, params.id);
   return (
     <HydrationBoundary state={dehydrate(query)}>
@@ -33,8 +37,8 @@ const Page = async ({ params }: Props) => {
           <div className="flex gap-x-2">
             <FileWarning />
             When...
-            <Trigger id={params.id} />
           </div>
+          <Trigger id={params.id} />
         </div>
       </div>
     </HydrationBoundary>

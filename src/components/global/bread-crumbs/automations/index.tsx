@@ -34,13 +34,20 @@ const AutomationsBreadCrumb = ({ id }: Props) => {
               className="bg-transparent h-auto online-none text-base border-none p-0"
             />
           ) : (
-            <p className="text-[#9B9CA0]">{data?.data?.name}</p>
+            <p className="text-[#9B9CA0] truncate">
+              {latestVariable?.variables
+                ? latestVariable?.variables.name
+                : data?.data?.name}
+            </p>
           )}
 
           {edit ? (
             <></>
           ) : (
-            <span className="cursor-pointer hover:opacity-75 duration-100 transition flex-shrink-0 mr-4">
+            <span
+              className="cursor-pointer hover:opacity-75 duration-100 transition flex-shrink-0 mr-4"
+              onClick={enableEdit}
+            >
               <PencilIcon size={14} />
             </span>
           )}
