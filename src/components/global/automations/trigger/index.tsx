@@ -51,7 +51,8 @@ const Trigger = ({ id }: Props) => {
           ]}
         />
       </>
-      <ThenAction />
+      {/* WIP: {!data.data.listener &&  } */}
+      <ThenAction id={id} />
     </div>
   );
 };

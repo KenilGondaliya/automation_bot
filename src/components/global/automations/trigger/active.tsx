@@ -18,7 +18,7 @@ const ActiveTrigger = ({ keywords, type }: Props) => {
     <div className="bg-background-80 p-3 rounded-xl w-full">
       <div className="flex gap-x-2 items-center">
         {type === "COMMENT" ? (
-          <Instagram color="#5409DA" size={19} />
+          <Instagram color="#3352CC" size={19} />
         ) : (
           <img src={send.src} alt="this is img" />
         )}
