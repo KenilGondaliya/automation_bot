@@ -7,6 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import ThenAction from "../then/then-action";
 import TriggerButton from "../trigger-button";
 import { AUTOMATION_TRIGGERS } from "@/constants/automation";
+import { useTriggers } from "@/hooks/use-automations";
 
 type Props = {
   id: string;
