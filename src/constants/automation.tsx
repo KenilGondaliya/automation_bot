@@ -1,5 +1,5 @@
 "use client";
-import { BadgePlus, Bot } from "lucide-react";
+import { BadgePlus, Bot, Instagram } from "lucide-react";
 import { v4 } from "uuid";
 
 export type AutomationListenerProps = {
@@ -9,6 +9,23 @@ export type AutomationListenerProps = {
   description: string;
   type: "SMART_AI" | "MESSAGE";
 };
+
+export const AUTOMATION_TRIGGERS = AutomationTriggerProps[] = [
+  {
+    id: v4(),
+    label: "User comment on my post",
+    icon: <Instagram />,
+    description: "Select if you want to automate comments on your post",
+    type: "COMMENT",
+  },
+  {
+    id: v4(),
+    label: "Send me a dm with a keyword",
+    icon: <Instagram />,
+    description: "Trigger the automation when a user joins the project",
+    type: "JOIN_PROJECT",
+  },
+]
 
 export const AUTOMATION_LISTENERS: AutomationListenerProps[] = [
   {
@@ -26,3 +43,5 @@ export const AUTOMATION_LISTENERS: AutomationListenerProps[] = [
     type: "SMART_AI",
   },
 ];
+
+

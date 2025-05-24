@@ -3,6 +3,7 @@
 import { onCurrentUser } from "../user";
 import {
   addListener,
+  addTrigger,
   createAutomation,
   findAutomation,
   getAutomations,
@@ -87,7 +88,29 @@ export const saveListener = async (
   } catch (error) {
     return {
       status: 500,
-      data: "Can't save Listener",
+      data: "Oops! something went wrong",
+    };
+  }
+};
+
+export const saveTrigger = async (automationId: string, trigger: string[]) => {
+  await onCurrentUser();
+  try {
+    const create = await addTrigger(automationId, trigger);
+    if (create)
+      return {
+        status: 200,
+        data: "Trigger created",
+      };
+
+    return {
+      status: 404,
+      data: "Can't save Trigger",
+    };
+  } catch (error) {
+    return {
+      status: 500,
+      data: "Oops! something went wrong",
     };
   }
 };

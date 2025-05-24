@@ -43,7 +43,6 @@ const AutomationList = (props: Props) => {
 
   // console.log(optimisticUiData);
   
-
   return (
     <div className="flex flex-col gap-y-3">
       {optimisticUiData.data!.map((automation) => (
