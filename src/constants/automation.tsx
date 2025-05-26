@@ -10,7 +10,15 @@ export type AutomationListenerProps = {
   type: "SMART_AI" | "MESSAGE";
 };
 
-export const AUTOMATION_TRIGGERS = AutomationTriggerProps[] = [
+export type AutomationTriggerProps = {
+  id: string;
+  label: string;
+  icon: JSX.Element;
+  description: string;
+  type: "COMMENT" | "DM";
+};
+
+export const AUTOMATION_TRIGGERS: AutomationTriggerProps[] = [
   {
     id: v4(),
     label: "User comment on my post",
@@ -23,9 +31,9 @@ export const AUTOMATION_TRIGGERS = AutomationTriggerProps[] = [
     label: "Send me a dm with a keyword",
     icon: <Instagram />,
     description: "Trigger the automation when a user joins the project",
-    type: "JOIN_PROJECT",
+    type: "DM",
   },
-]
+];
 
 export const AUTOMATION_LISTENERS: AutomationListenerProps[] = [
   {

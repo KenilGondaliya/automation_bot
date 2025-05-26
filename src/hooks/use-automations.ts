@@ -112,14 +112,14 @@ export const useTriggers = (id: string) => {
 
   const dispatch: AppDispatch = useDispatch();
 
-  const onSetTrigger = (type: "COMMNET" | "DM") =>
+  const onSetTrigger = (type: "COMMENT" | "DM") =>
     dispatch(TRIGGER({ trigger: { type } }));
 
-  const { isPending, mutate } = useMutationData([
+  const { isPending, mutate } = useMutationData(
     ["add-trigger"],
     (data: { types: string[] }) => saveTrigger(id, data.types),
-    "automation-info",
-  ]);
+    "automation-info"
+  );
 
   const onSaveTrrigger = () => mutate({ types });
   return { types, onSetTrigger, onSaveTrrigger, isPending };
