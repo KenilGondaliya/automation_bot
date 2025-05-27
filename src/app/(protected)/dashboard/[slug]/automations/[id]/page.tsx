@@ -10,6 +10,7 @@ import {
   QueryClient,
 } from "@tanstack/react-query";
 import { PrefetchUserAutomation } from "@/react-query/prefetch";
+import ThenNode from "@/components/global/automations/then/node";
 
 type Props = {
   params: { id: string };
@@ -31,7 +32,7 @@ const Page = async ({ params }: Props) => {
   await PrefetchUserAutomation(query, params.id);
   return (
     <HydrationBoundary state={dehydrate(query)}>
-      <div className="flex flex-col items-center gap-y-2">
+      <div className="flex flex-col items-center gap-y-12">
         <AutomationsBreadCrumb id={params.id} />
         <div className="w-full lg:w-10/12 xl:w-6/12 p-5 rounded-xl flex flex-col bg-[#1D1D1D] gap-y-3">
           <div className="flex gap-x-2">
@@ -40,6 +41,7 @@ const Page = async ({ params }: Props) => {
           </div>
           <Trigger id={params.id} />
         </div>
+        <ThenNode id={params.id} />
       </div>
     </HydrationBoundary>
   );

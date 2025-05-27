@@ -28,7 +28,7 @@ export const AUTOMATION_TRIGGERS: AutomationTriggerProps[] = [
   },
   {
     id: v4(),
-    label: "Send me a dm with a keyword",
+    label: "User send me a dm with a keyword",
     icon: <Instagram />,
     description: "Trigger the automation when a user joins the project",
     type: "DM",
