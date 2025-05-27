@@ -124,3 +124,23 @@ export const useTriggers = (id: string) => {
   const onSaveTrrigger = () => mutate({ types });
   return { types, onSetTrigger, onSaveTrrigger, isPending };
 };
+
+export const useKeywords = (id: string) => {
+  const [keyword, setKeyword] = useState("");
+  const onValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setKeyword(e.target.value);
+
+    const { mutate } = useMutationData(
+      ["add-keyword"],
+      (data: { keyword: string }) => saveKeyword(id, data.keyword),
+      "automation-info",
+      () => setKeyword("")
+    );
+
+    const onKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+      if (e.key === "Enter") {
+        mu;
+      }
+    };
+  };
+};

@@ -114,3 +114,16 @@ export const saveTrigger = async (automationId: string, trigger: string[]) => {
     };
   }
 };
+
+export const saveKeyword = async (automationId: string, keyword: string) => {
+  await onCurrentUser();
+  try {
+    const create = await addKeyWord(automationId, keyword);
+
+    if (create) return { status: 200, data: "Keyword added Successfully" };
+
+    return { status: 404, data: "Can't add this Keyword" };
+  } catch (error) {
+    return { status: 500, data: "Oops! something went wrong" };
+  }
+};
