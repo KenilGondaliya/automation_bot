@@ -2,9 +2,11 @@
 
 import { onCurrentUser } from "../user";
 import {
+  addKeyWord,
   addListener,
   addTrigger,
   createAutomation,
+  deleteKeywordQuery,
   findAutomation,
   getAutomations,
   updateAutomation,
@@ -123,6 +125,19 @@ export const saveKeyword = async (automationId: string, keyword: string) => {
     if (create) return { status: 200, data: "Keyword added Successfully" };
 
     return { status: 404, data: "Can't add this Keyword" };
+  } catch (error) {
+    return { status: 500, data: "Oops! something went wrong" };
+  }
+};
+
+export const deleteKeyword = async (id: string) => {
+  await onCurrentUser();
+  try {
+    const deleted = await deleteKeywordQuery(id);
+
+    if (deleted) return { status: 200, data: "Keyword deleted" };
+
+    return { status: 404, data: "Keyword not found" };
   } catch (error) {
     return { status: 500, data: "Oops! something went wrong" };
   }
