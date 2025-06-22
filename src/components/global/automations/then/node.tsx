@@ -1,7 +1,7 @@
 "use client";
 import { Separator } from "@/components/ui/separator";
 import { useQueryAutomation } from "@/hooks/user-queries";
-import { Bot, FileWarning, Instagram } from "lucide-react";
+import { Bot, FileWarning } from "lucide-react";
 import send from "@/assets/svgs/send.svg";
 
 import React from "react";

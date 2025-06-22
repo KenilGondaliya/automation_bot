@@ -2,8 +2,7 @@ import { Input } from "@/components/ui/input";
 import { useKeywords } from "@/hooks/use-automations";
 import { useMutationdataState } from "@/hooks/use-mutation-data";
 import { useQueryAutomation } from "@/hooks/user-queries";
-import { on } from "events";
-import { X, XIcon } from "lucide-react";
+import { X } from "lucide-react";
 import React from "react";
 
 type Props = {
@@ -32,7 +31,7 @@ const Keywords = ({ id }: Props) => {
                   className="bg-background-90 flex items-center gap-x-2 capitalize text-text-secondary py-1 px-4 rounded-full"
                 >
                   <p>{word.word}</p>
-                  <X  
+                  <X
                     size={20}
                     onClick={() => deleteMutation({ id: word.id })}
                   />
